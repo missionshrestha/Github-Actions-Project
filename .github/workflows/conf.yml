@@ -2,7 +2,7 @@ name: Push to ECR
 on:
   push:
     branches:
-      - develop
+      - main
 env:
   CI: false
 
@@ -11,6 +11,10 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Pull Latest Changes
+      run: |
+        pwd
+
+    - name: Test Docker Build
       run: |
         pwd
         # cd ~/datafuse
