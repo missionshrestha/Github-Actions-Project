@@ -1,0 +1,29 @@
+name: Push to ECR
+on:
+  push:
+    branches:
+      - develop
+env:
+  CI: false
+
+jobs:
+  build-and-push:
+    runs-on: self-hosted
+    steps:
+    - name: Pull Latest Changes
+      run: |
+        pwd
+        # cd ~/datafuse
+        # export PATH=/usr/local/bin:$PATH
+        # export PATH=~/.nvm/versions/node/v22.1.0/bin:$PATH
+        # git checkout develop
+        # git stash
+        # git pull
+        # docker-compose -f production.yml down
+        # docker-compose -f production.yml up --build -d
+
+    # - name: Docker system Prune
+    #   if: success()
+    #   run: |
+    #     sudo chown ec2-user:docker /home/ec2-user/datafuse/db.sqlite3
+    #     docker system prune -f
